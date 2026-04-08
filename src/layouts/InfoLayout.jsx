@@ -152,13 +152,18 @@ const InfoLayout = ({ data, showBigPoster }) => {
               <>
                 <div className="studio">
                   <span>Studio : </span>
-                  <Link
-                    to={`/producer/${data.studios
-                      .toLowerCase()
-                      .replace(" ", "-")}`}
-                  >
-                    <span className="text-primary">{data.studios}</span>
-                  </Link>
+                  <div>
+                    {data.studios.map((studio) => (
+                      <Link
+                        key={studio}
+                        to={`/producer/${studio
+                          .toLowerCase()
+                          .replace(" ", "-")}`}
+                      >
+                        <span className="text-primary">{data.studios}</span>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
                 <div className="lightBorder"></div>
               </>

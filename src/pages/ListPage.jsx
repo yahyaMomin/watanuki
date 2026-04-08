@@ -35,11 +35,12 @@ const ListPage = () => {
 
   const isValidQuery = validateQueries.includes(category);
 
+  console.log(isValidQuery);
   if (!isValidQuery) {
     return <PageNotFound />;
   }
 
-  const endpoint = `/animes/${category}${query ? `/${query}` : ""}?page=`;
+  const endpoint = `/${category}${query ? `/${query}` : ""}?page=`;
   const { data, isError, error, isLoading, hasNextPage, fetchNextPage } =
     useInfiniteApi(endpoint);
 

@@ -26,7 +26,7 @@ const Home = () => {
 
   useEffect(() => {
     if (data?.data) {
-      setTopTen(data.data.top10);
+      setTopTen(data.data.topTen);
     }
   }, [data]);
 
